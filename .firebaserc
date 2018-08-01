@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "dev": "app-metro-ws",
+    "staging": "api-dekoclick"
+  }
+}

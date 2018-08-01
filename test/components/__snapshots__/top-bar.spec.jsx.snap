@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopBar /> should print warning in console.error when missing title 1`] = `
+Array [
+  "Warning: Failed prop type: The prop \`title\` is marked as required in \`TopBar\`, but its value is \`undefined\`.
+    in TopBar
+    in WithStyles(TopBar)
+    in Connect(WithStyles(TopBar))
+    in Provider",
+]
+`;
+
+exports[`<TopBar /> should render to a <header> containing an <h2> with the title 1`] = `
+Object {
+  "class": "MuiPaper-root-16 MuiPaper-elevation4-22 MuiAppBar-root-8 MuiAppBar-positionAbsolute-10 MuiAppBar-colorPrimary-14 TopBar-appBar-1",
+}
+`;
