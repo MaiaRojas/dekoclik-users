@@ -49,15 +49,16 @@ const styles = theme => ({
 });
 
 
-const Project = (props) => {
+const Customer = (props) => {
   if(typeof props.projects === 'undefined'){
     return (<Loader />);
-  };
+  }
+  // const { designerid } = match.params;
+  // console.log(designer);
   console.log(props);
   return (
     <div >
       <TopBar title="project">
-        Volver a perfil
       </TopBar>
       <div className={props.classes.root}>
         <Grid container style={{backgroundColor:'white',}}>
@@ -77,16 +78,7 @@ const Project = (props) => {
           <ProjectSection
             title="Proyectos"
           >
-            <Typography variant="title" >
-              Paquete Clasico
-            </Typography>
-            <Typography variant="body" >
-              Ambiente: Sala
-            </Typography>
-            <Typography variant="title" >
-              Conceptos
-            </Typography>
-            {/* {!props.projects.length ?
+            {!props.projects.length ?
               (
                 <Alert
                   message="Usted aún no tiene proyectos asignados"
@@ -107,7 +99,7 @@ const Project = (props) => {
                   </List>
                 </div>
               )
-            } */}
+            }
           </ProjectSection>
         </Grid>
       </div>
@@ -115,7 +107,7 @@ const Project = (props) => {
   );
 }
 
-Project.propTypes = {
+Customer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
@@ -142,4 +134,4 @@ export default compose(
   })),
   connect(mapStateToProps, mapDispatchToProps),
   withStyles(styles),
-)(Project);
+)(Customer);

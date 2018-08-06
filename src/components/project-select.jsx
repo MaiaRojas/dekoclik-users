@@ -52,12 +52,6 @@ const ProjectSelect = (props) => {
           <Typography gutterBottom variant="headline" component="h2" style={{ color: '#777777',fontSize: 26.25}}>
             Paquete Clásico
           </Typography>
-          <Typography component="p" style={{ color: '#939393',fontSize: 15.22}}>
-            Cliente: Ana Rosa Chavez
-          </Typography>
-          <Typography component="p" style={{ color: '#939393',fontSize: 15.22}}>
-            Ambiente: Sala
-          </Typography>
         </CardContent>
         <CardActions>
           <Button
@@ -65,20 +59,13 @@ const ProjectSelect = (props) => {
             variant="raised"
             color="primary"
             onClick={() => {
-              history.push(`/designers/${props.designerid}/projects/${props.projectid}`)}
+              history.push(`/customer/${props.projectid}`)}
             }
             className={classes.button}
           >
             Continuar
           </Button>
             <div>
-              <Tooltip placement="left" title="Bloquear projecto">
-                <IconButton onClick={
-                  props.toggleProjectLockedDialog
-                }>
-                  <NoEncryptionIcon />
-                </IconButton>
-              </Tooltip>
               <Tooltip placement="left" title="Eliminar projecto">
                 <IconButton onClick={props.toggleProjectDeleteDialog}>
                   <DeleteIcon />

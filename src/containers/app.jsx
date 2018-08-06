@@ -10,26 +10,28 @@ import ScrollToTop from '../components/scroll-to-top';
 import SignIn from './signin';
 import Dashboard from './dashboard';
 import Projects from './projects';
-import Project from './project';
+
 import Packet from './packet';
 import Why from './why';
-import Designers from './designers';
+
 import ChangeDesigner from './change-designer';
 import Loader from '../components/loader';
-
+import Project from './project';
+import Customer from './customer';
 
 const App = (props) => {
   if (!props.auth.isLoaded || !props.profile.isLoaded) {
+    console.log('no esta auntenticado');
     return (<Loader />);
   }
-
+  console.log(props)
   return (
     <Intl {...props}>
       <Router>
         {props.auth.isEmpty
           ? (
             <Route
-              path="/:action?/:groupid?"
+              path="/:action?"
               component={SignIn}
               authError={props.authError}
             />
@@ -37,15 +39,10 @@ const App = (props) => {
           : (
             <ScrollToTop>
               <Switch>
-                {/* <WrappedRoute
-                  path="/projects/:projectid/designers/:designerid"
-                  component={Project}
-                  {...props}
-                /> */}
-                <WrappedRoute path="/designers/:designerid/projects/:projectid/why" component={Why} {...props} />
-                <WrappedRoute path="/designers/:designerid/projects/:projectid" component={Packet} {...props} />
-                <WrappedRoute path="/designers/:designerid" component={Project} {...props} />
-                <WrappedRoute path="/designers" component={Designers} {...props} />
+                {/* <WrappedRoute path="/designers/:designerid/projects/:projectid/why" component={Why} {...props} />
+                <WrappedRoute path="/designers/:designerid/projects/:projectid" component={Packet} {...props} /> */}
+                <WrappedRoute path="/customer/:projectid" component={Project} {...props} />
+                <WrappedRoute path="/customer" component={Customer} {...props} />
                 <WrappedRoute path="/projects/:projectid/designers" component={ChangeDesigner} {...props} />
                 <WrappedRoute path="/projects" component={Projects} {...props} />
                 <WrappedRoute exact path="/" component={Dashboard} {...props} />

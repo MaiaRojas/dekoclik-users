@@ -13,7 +13,7 @@ import Typography from 'material-ui/Typography';
 import { displayDrawer } from '../reducers/top-bar';
 import Avatar from 'material-ui/Avatar';
 import SimpleMenu from '../components/menu';
-
+import NotificationsIcon from 'material-ui-icons/Notifications';
 
 const drawerWidth = 321;
 const styles = theme => ({
@@ -90,13 +90,13 @@ const TopBar = props => (
     }
   >
     <Toolbar disableGutters={!props.drawerOpen} className={props.classes.spaceMenu} >
-      <UserAvatar user={props.profile} />
       <div style={{ display: 'flex'}}>
         {props.children}
         <SimpleMenu
           firebase={props.firebase}
           history={props.history}
         />
+        <NotificationsIcon />
       </div>
     </Toolbar>
   </AppBar>

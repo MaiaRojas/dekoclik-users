@@ -1,5 +1,5 @@
 const Dashboard = (props) => {
-  setTimeout(() => props.history.push('/projects'), 10);
+  setTimeout(() => props.history.push('/customer'), 10);
   return null;
 };
 

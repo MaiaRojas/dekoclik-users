@@ -45,7 +45,7 @@ const postSignUp = (props, userRecord) => {
   })
     .then(() =>
       // TODO: This should happen in backend!!! Refactor PUT /users/:id ???
-      db.doc(`cohorts/${props.cohortid}/users/${userRecord.uid}`).set({ role: 'student' }))
+      db.doc(`cohorts/${props.cohortid}/users/${userRecord.uid}`).set({ role: 'customers' }))
     .then(() => {
       props.resetSignInForm();
       // TODO: for some reason props.history.push() doesn't trigger route, so
@@ -136,7 +136,7 @@ const styles = theme => ({
 
 
 const SignInForgotToggle = props => (
-  <Typography 
+  <Typography
       className = {props.classes.linkSignin}
   >
     { !props.forgot && '¿Olvidaste tu contraseña? '}
@@ -329,6 +329,7 @@ const SignIn = (props) => {
   }
 
   if (props.signup ) {
+    console.log('No signup',props.signup , props)
     return <Loader />;
   }
 

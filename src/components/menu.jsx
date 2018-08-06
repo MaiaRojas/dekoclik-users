@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import MenuIcon from 'material-ui-icons/Menu';
+import SettingsIcon from 'material-ui-icons/Settings';
 import IconButton from 'material-ui/IconButton';
 
 const styles = theme => ({
@@ -35,7 +35,7 @@ class SimpleMenu extends React.Component {
           aria-haspopup="true"
           onClick={this.handleClick}
         >
-          <MenuIcon/>
+          <SettingsIcon/>
         </Button>
         <Menu
           id="simple-menu"
@@ -44,10 +44,11 @@ class SimpleMenu extends React.Component {
           onClose={this.handleClose}
         >
           <MenuItem onClick={() => history.push('/projects')} >
-            Proyectos
+            Ver proyectos
           </MenuItem>
           <MenuItem onClick={() => history.push('/designers')} >
-            Diseñadores</MenuItem>
+            Ver historial de pagos
+          </MenuItem>
           <MenuItem onClick={ () => firebase.logout() }>
             Cerrar sesión
           </MenuItem>
